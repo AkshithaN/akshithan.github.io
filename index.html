@@ -1,9 +1,269 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My Portfolio</title>
-  </head>
-  <body>
-    <h1>Hello 👋 My GitHub Pages works!</h1>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Akshitha N | Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #ffffff;
+      color: #000000;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      border-bottom: 1px solid #e5e5e5;
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav li:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 4rem 1rem;
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    h2 {
+      border-bottom: 2px solid #000;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Home */
+    .home {
+      text-align: center;
+      padding-top: 5rem;
+    }
+
+    .home img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #000;
+      margin-bottom: 1.5rem;
+    }
+
+    .home p {
+      max-width: 700px;
+      margin: auto;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      border: 1px solid #000;
+      padding: 0.6rem 1.5rem;
+      margin: 0.5rem;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    /* Cards */
+    .card {
+      border: 1px solid #ddd;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    /* Skills */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill {
+      border: 1px solid #000;
+      text-align: center;
+      padding: 0.8rem;
+    }
+
+    /* Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* Contact */
+    .contact a {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid #e5e5e5;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <strong>Akshitha N</strong>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="home" class="home">
+  <!-- Replace profile.jpg with your image -->
+  <img src="profile.jpg" alt="Akshitha N">
+  <h1>Akshitha N</h1>
+  <p>Enthusiastic IT professional passionate about problem-solving and innovative solutions.</p>
+  <a href="#projects" class="btn">View Projects</a>
+  <a href="#contact" class="btn">Contact Me</a>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    Enthusiastic IT fresher with a B.Tech degree in Computer Science Engineering.
+    Eager to contribute technical skills and a passion for problem-solving in a
+    dynamic, growth-oriented organization. Quick learner with a keen eye for detail
+    and a drive to stay updated with industry trends.
+  </p>
+
+  <h3>Education</h3>
+  <div class="card">
+    <strong>PES University, Bengaluru</strong><br>
+    B.Tech in Computer Science Engineering<br>
+    Expected May 2024 | CGPA: 7.76/10
+  </div>
+
+  <div class="card">
+    <strong>ASC PU College, Bengaluru</strong><br>
+    Higher Secondary Education (PCM with Biology)<br>
+    2020 | 86.6%
+  </div>
+
+  <div class="card">
+    <strong>St. Ann’s High School, Bengaluru</strong><br>
+    Secondary Education (ICSE)<br>
+    2018 | 83.4%
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+
+  <div class="card">
+    <strong>Software Engineer — Celstream Technologies Pvt Ltd</strong><br>
+    Feb 2024 – Present
+    <ul>
+      <li>Developing enterprise Windows applications using WPF, C#, .NET, and C++</li>
+      <li>UI enhancements using MVVM architecture</li>
+      <li>Backend logic and workflow optimization</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <strong>KPMG Virtual Internship Program</strong><br>
+    Nov 2023
+    <ul>
+      <li>Customer targeting using data analytics</li>
+      <li>Data quality assessment and dashboard development</li>
+    </ul>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="skill">Java</div>
+    <div class="skill">Python</div>
+    <div class="skill">C++</div>
+    <div class="skill">C#</div>
+    <div class="skill">WPF</div>
+    <div class="skill">MFC</div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="card">Yet Another Kafka — Mini Kafka using RabbitMQ</div>
+    <div class="card">Predictive Analysis of Outages — Industrial IoT (CONTIKI, COOJA)</div>
+    <div class="card">Telecom Churn Prediction — Online & Batch Dashboard</div>
+    <div class="card">VOTEHUB — Online Voting System (ReactJS)</div>
+    <div class="card">Movie Recommendation — Collaborative Filtering</div>
+    <div class="card">Smart City Management System — Spring MVC</div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <a href="mailto:akshitha10283@gmail.com">📧 akshitha10283@gmail.com</a>
+  <a href="https://www.linkedin.com/in/akshitha-n-b59751220/" target="_blank">🔗 LinkedIn</a>
+  <a href="https://github.com/AkshithaN" target="_blank">💻 GitHub</a>
+</section>
+
+<footer>
+  © 2024 Akshitha N | Portfolio
+</footer>
+
+</body>
 </html>
