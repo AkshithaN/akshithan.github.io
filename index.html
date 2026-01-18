@@ -3,15 +3,18 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akshitha N | Portfolio</title>
+<title>Akshitha N | Software Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --accent: #2563eb;
-  --bg-light: #f8fafc;
-  --text-dark: #0f172a;
+  --accent: #3b82f6;
+  --accent-soft: #dbeafe;
+  --bg: #f9fafb;
+  --text: #0f172a;
+  --muted: #475569;
+  --card: #ffffff;
   --border: #e5e7eb;
 }
 
@@ -23,21 +26,22 @@
 }
 
 body {
-  background: white;
-  color: var(--text-dark);
+  background: var(--bg);
+  color: var(--text);
   scroll-behavior: smooth;
 }
 
 header {
   position: sticky;
   top: 0;
-  background: rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
   z-index: 1000;
 }
 
 nav {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
   padding: 1rem;
   display: flex;
@@ -48,7 +52,11 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 1.8rem;
+  gap: 2rem;
+}
+
+nav a {
+  font-weight: 500;
 }
 
 nav a:hover {
@@ -56,65 +64,66 @@ nav a:hover {
 }
 
 section {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
-  padding: 5rem 1.2rem;
-  animation: fadeUp 0.8s ease both;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-h1 {
-  font-size: 2.8rem;
+  padding: 5rem 1.5rem;
 }
 
 h2 {
   font-size: 2rem;
-  margin-bottom: 2rem;
-  border-left: 5px solid var(--accent);
-  padding-left: 1rem;
+  margin-bottom: 2.5rem;
+  position: relative;
 }
 
-p {
-  max-width: 800px;
-  line-height: 1.7;
+h2::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  border-radius: 2px;
 }
 
+/* HERO */
 .hero {
-  text-align: center;
-  background: linear-gradient(to bottom, #f8fafc, white);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: center;
+  padding-top: 6rem;
 }
 
-.hero img {
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  border: 4px solid white;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  margin-bottom: 1.5rem;
+.hero h1 {
+  font-size: 3rem;
+  line-height: 1.2;
 }
 
 .hero span {
   color: var(--accent);
 }
 
+.hero p {
+  margin: 1.5rem 0;
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+.hero img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
 .btn {
   display: inline-block;
   padding: 0.7rem 1.6rem;
-  border-radius: 6px;
-  margin: 1rem 0.5rem 0;
+  border-radius: 8px;
+  margin-right: 1rem;
   font-weight: 500;
-  border: 1px solid var(--accent);
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
 .btn.primary {
@@ -123,59 +132,81 @@ p {
 }
 
 .btn.primary:hover {
-  opacity: 0.9;
+  transform: translateY(-2px);
 }
 
-.btn.outline:hover {
+.btn.secondary {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+.btn.secondary:hover {
   background: var(--accent);
   color: white;
 }
 
+/* CARDS */
 .card {
-  background: white;
+  background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 16px;
+  padding: 1.8rem;
+  margin-bottom: 1.8rem;
+  transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 30px rgba(0,0,0,0.08);
+  transform: translateY(-6px);
+  box-shadow: 0 25px 40px rgba(0,0,0,0.1);
 }
 
+/* SKILLS */
 .skills {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.2rem;
 }
 
 .skill {
-  text-align: center;
-  padding: 0.8rem;
-  border-radius: 8px;
-  background: var(--bg-light);
+  background: var(--accent-soft);
+  padding: 0.9rem;
+  border-radius: 10px;
   font-weight: 500;
+  text-align: center;
 }
 
+/* PROJECTS */
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
 }
 
+/* CONTACT */
 .contact a {
   display: block;
   margin-bottom: 0.8rem;
+  font-weight: 500;
   color: var(--accent);
 }
 
 footer {
   text-align: center;
   padding: 2rem;
-  background: var(--bg-light);
-  font-size: 0.9rem;
+  color: var(--muted);
+  background: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero img {
+    margin: auto;
+  }
 }
 </style>
 </head>
@@ -197,25 +228,28 @@ footer {
 </header>
 
 <section id="home" class="hero">
+  <div>
+    <h1>Hi, I’m <span>Akshitha</span><br>Software Engineer</h1>
+    <p>
+      B.Tech Computer Science graduate working at Celstream Technologies,
+      building enterprise Windows applications using WPF, C#, and C++.
+    </p>
+    <a href="#projects" class="btn primary">View Work</a>
+    <a href="#contact" class="btn secondary">Contact</a>
+  </div>
   <img src="profile.jpg" alt="Akshitha N">
-  <h1>Akshitha <span>N</span></h1>
-  <p>Software Engineer | Computer Science Graduate | Problem Solver</p>
-  <a href="#projects" class="btn primary">View Projects</a>
-  <a href="#contact" class="btn outline">Contact</a>
 </section>
 
 <section id="about">
   <h2>About Me</h2>
   <p>
-    Enthusiastic IT fresher with a B.Tech in Computer Science Engineering,
-    currently working as a Software Engineer at Celstream Technologies.
-    Passionate about building scalable applications and learning new technologies.
+    Enthusiastic IT professional with a strong foundation in computer science,
+    passionate about problem-solving, clean architecture, and continuous learning.
   </p>
 
-  <h3>Education</h3>
-  <div class="card">PES University — B.Tech CSE | 2024 | CGPA 7.76</div>
-  <div class="card">ASC PU College — Higher Secondary | 2020 | 86.6%</div>
-  <div class="card">St. Ann’s High School — ICSE | 2018 | 83.4%</div>
+  <div class="card">🎓 PES University — B.Tech CSE | 2024 | CGPA 7.76</div>
+  <div class="card">🏫 ASC PU College — 2020 | 86.6%</div>
+  <div class="card">🏫 St. Ann’s High School — 2018 | 83.4%</div>
 </section>
 
 <section id="experience">
@@ -223,15 +257,13 @@ footer {
 
   <div class="card">
     <strong>Software Engineer — Celstream Technologies</strong><br><br>
-    • WPF, C#, .NET, C++ enterprise application development<br>
-    • MVVM architecture and UI enhancements<br>
-    • Workflow optimization and debugging
+    Enterprise WPF application development, MVVM architecture, C++ backend integration,
+    UI optimization, and performance debugging.
   </div>
 
   <div class="card">
     <strong>KPMG Virtual Internship — Data Analytics</strong><br><br>
-    • Customer segmentation and data quality analysis<br>
-    • Dashboard creation and insights reporting
+    Customer segmentation, data quality analysis, and dashboard creation using analytics tools.
   </div>
 </section>
 
@@ -250,9 +282,9 @@ footer {
 <section id="projects">
   <h2>Projects</h2>
   <div class="projects">
-    <div class="card">Yet Another Kafka — RabbitMQ based messaging system</div>
+    <div class="card">Yet Another Kafka — RabbitMQ messaging architecture</div>
     <div class="card">Industrial IoT Network Optimization — CONTIKI, COOJA</div>
-    <div class="card">Telecom Churn Prediction — ML Dashboard</div>
+    <div class="card">Telecom Churn Prediction — ML dashboards</div>
     <div class="card">VOTEHUB — Online Voting Platform</div>
     <div class="card">Movie Recommendation — Collaborative Filtering</div>
     <div class="card">Smart City Management — Spring MVC</div>
@@ -267,7 +299,7 @@ footer {
 </section>
 
 <footer>
-  © 2024 Akshitha N | Built with ❤️
+  © 2024 Akshitha N · Software Engineer
 </footer>
 
 </body>
