@@ -1,232 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Akshitha N | Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akshitha N | Portfolio</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
+<style>
+:root {
+  --accent: #2563eb;
+  --bg-light: #f8fafc;
+  --text-dark: #0f172a;
+  --border: #e5e7eb;
+}
 
-    body {
-      background: #ffffff;
-      color: #000000;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+body {
+  background: white;
+  color: var(--text-dark);
+  scroll-behavior: smooth;
+}
 
-    header {
-      position: sticky;
-      top: 0;
-      background: #fff;
-      border-bottom: 1px solid #e5e5e5;
-      z-index: 1000;
-    }
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.95);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+}
 
-    nav {
-      max-width: 1100px;
-      margin: auto;
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+nav {
+  max-width: 1100px;
+  margin: auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.8rem;
+}
 
-    nav li:hover {
-      text-decoration: underline;
-    }
+nav a:hover {
+  color: var(--accent);
+}
 
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 4rem 1rem;
-    }
+section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 5rem 1.2rem;
+  animation: fadeUp 0.8s ease both;
+}
 
-    h1, h2, h3 {
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    h2 {
-      border-bottom: 2px solid #000;
-      display: inline-block;
-      padding-bottom: 0.3rem;
-      margin-bottom: 2rem;
-    }
+h1 {
+  font-size: 2.8rem;
+}
 
-    /* Home */
-    .home {
-      text-align: center;
-      padding-top: 5rem;
-    }
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  border-left: 5px solid var(--accent);
+  padding-left: 1rem;
+}
 
-    .home img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #000;
-      margin-bottom: 1.5rem;
-    }
+p {
+  max-width: 800px;
+  line-height: 1.7;
+}
 
-    .home p {
-      max-width: 700px;
-      margin: auto;
-      margin-bottom: 2rem;
-    }
+.hero {
+  text-align: center;
+  background: linear-gradient(to bottom, #f8fafc, white);
+}
 
-    .btn {
-      display: inline-block;
-      border: 1px solid #000;
-      padding: 0.6rem 1.5rem;
-      margin: 0.5rem;
-      transition: 0.3s;
-    }
+.hero img {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+}
 
-    .btn:hover {
-      background: #000;
-      color: #fff;
-    }
+.hero span {
+  color: var(--accent);
+}
 
-    /* Cards */
-    .card {
-      border: 1px solid #ddd;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      transition: 0.3s;
-    }
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  border-radius: 6px;
+  margin: 1rem 0.5rem 0;
+  font-weight: 500;
+  border: 1px solid var(--accent);
+  transition: all 0.3s ease;
+}
 
-    .card:hover {
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    }
+.btn.primary {
+  background: var(--accent);
+  color: white;
+}
 
-    /* Skills */
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 1rem;
-    }
+.btn.primary:hover {
+  opacity: 0.9;
+}
 
-    .skill {
-      border: 1px solid #000;
-      text-align: center;
-      padding: 0.8rem;
-    }
+.btn.outline:hover {
+  background: var(--accent);
+  color: white;
+}
 
-    /* Projects */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    /* Contact */
-    .contact a {
-      display: block;
-      margin-bottom: 0.5rem;
-    }
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 30px rgba(0,0,0,0.08);
+}
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      border-top: 1px solid #e5e5e5;
-      font-size: 0.9rem;
-    }
-  </style>
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.skill {
+  text-align: center;
+  padding: 0.8rem;
+  border-radius: 8px;
+  background: var(--bg-light);
+  font-weight: 500;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.contact a {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: var(--accent);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: var(--bg-light);
+  font-size: 0.9rem;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <nav>
-    <strong>Akshitha N</strong>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<nav>
+  <strong>Akshitha N</strong>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 </header>
 
-<section id="home" class="home">
-  <!-- Replace profile.jpg with your image -->
+<section id="home" class="hero">
   <img src="profile.jpg" alt="Akshitha N">
-  <h1>Akshitha N</h1>
-  <p>Enthusiastic IT professional passionate about problem-solving and innovative solutions.</p>
-  <a href="#projects" class="btn">View Projects</a>
-  <a href="#contact" class="btn">Contact Me</a>
+  <h1>Akshitha <span>N</span></h1>
+  <p>Software Engineer | Computer Science Graduate | Problem Solver</p>
+  <a href="#projects" class="btn primary">View Projects</a>
+  <a href="#contact" class="btn outline">Contact</a>
 </section>
 
 <section id="about">
   <h2>About Me</h2>
   <p>
-    Enthusiastic IT fresher with a B.Tech degree in Computer Science Engineering.
-    Eager to contribute technical skills and a passion for problem-solving in a
-    dynamic, growth-oriented organization. Quick learner with a keen eye for detail
-    and a drive to stay updated with industry trends.
+    Enthusiastic IT fresher with a B.Tech in Computer Science Engineering,
+    currently working as a Software Engineer at Celstream Technologies.
+    Passionate about building scalable applications and learning new technologies.
   </p>
 
   <h3>Education</h3>
-  <div class="card">
-    <strong>PES University, Bengaluru</strong><br>
-    B.Tech in Computer Science Engineering<br>
-    Expected May 2024 | CGPA: 7.76/10
-  </div>
-
-  <div class="card">
-    <strong>ASC PU College, Bengaluru</strong><br>
-    Higher Secondary Education (PCM with Biology)<br>
-    2020 | 86.6%
-  </div>
-
-  <div class="card">
-    <strong>St. Ann’s High School, Bengaluru</strong><br>
-    Secondary Education (ICSE)<br>
-    2018 | 83.4%
-  </div>
+  <div class="card">PES University — B.Tech CSE | 2024 | CGPA 7.76</div>
+  <div class="card">ASC PU College — Higher Secondary | 2020 | 86.6%</div>
+  <div class="card">St. Ann’s High School — ICSE | 2018 | 83.4%</div>
 </section>
 
 <section id="experience">
   <h2>Experience</h2>
 
   <div class="card">
-    <strong>Software Engineer — Celstream Technologies Pvt Ltd</strong><br>
-    Feb 2024 – Present
-    <ul>
-      <li>Developing enterprise Windows applications using WPF, C#, .NET, and C++</li>
-      <li>UI enhancements using MVVM architecture</li>
-      <li>Backend logic and workflow optimization</li>
-    </ul>
+    <strong>Software Engineer — Celstream Technologies</strong><br><br>
+    • WPF, C#, .NET, C++ enterprise application development<br>
+    • MVVM architecture and UI enhancements<br>
+    • Workflow optimization and debugging
   </div>
 
   <div class="card">
-    <strong>KPMG Virtual Internship Program</strong><br>
-    Nov 2023
-    <ul>
-      <li>Customer targeting using data analytics</li>
-      <li>Data quality assessment and dashboard development</li>
-    </ul>
+    <strong>KPMG Virtual Internship — Data Analytics</strong><br><br>
+    • Customer segmentation and data quality analysis<br>
+    • Dashboard creation and insights reporting
   </div>
 </section>
 
@@ -245,12 +250,12 @@
 <section id="projects">
   <h2>Projects</h2>
   <div class="projects">
-    <div class="card">Yet Another Kafka — Mini Kafka using RabbitMQ</div>
-    <div class="card">Predictive Analysis of Outages — Industrial IoT (CONTIKI, COOJA)</div>
-    <div class="card">Telecom Churn Prediction — Online & Batch Dashboard</div>
-    <div class="card">VOTEHUB — Online Voting System (ReactJS)</div>
+    <div class="card">Yet Another Kafka — RabbitMQ based messaging system</div>
+    <div class="card">Industrial IoT Network Optimization — CONTIKI, COOJA</div>
+    <div class="card">Telecom Churn Prediction — ML Dashboard</div>
+    <div class="card">VOTEHUB — Online Voting Platform</div>
     <div class="card">Movie Recommendation — Collaborative Filtering</div>
-    <div class="card">Smart City Management System — Spring MVC</div>
+    <div class="card">Smart City Management — Spring MVC</div>
   </div>
 </section>
 
@@ -262,7 +267,7 @@
 </section>
 
 <footer>
-  © 2024 Akshitha N | Portfolio
+  © 2024 Akshitha N | Built with ❤️
 </footer>
 
 </body>
